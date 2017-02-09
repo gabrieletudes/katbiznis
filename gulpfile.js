@@ -13,7 +13,8 @@
      sass = require( "gulp-sass" ),
      autoprefixer = require( "gulp-autoprefixer" ),
      csso = require( "gulp-csso" )
-     pug = require( "gulp-pug" );
+     pug = require( "gulp-pug" )
+     babel = require( "gulp-babel" );
 
 // --- Task for images
 gulp.task( "images", function(){
@@ -33,13 +34,13 @@ gulp.task( "css", function(){
 gulp.task( "html", function(){
     gulp.src( "src/pug/**/*.pug" )
         .pipe( pug() )
-        .pipe( gulp.dest( "." ) )
+        .pipe( gulp.dest( "." ) );
 } );
 // --- Task for js
-gulp.task( "html", function(){
-    gulp.src( "src/pug/**/*.pug" )
-        .pipe( pug() )
-        .pipe( gulp.dest( "." ) )
+gulp.task( "js", function(){
+    gulp.src( "src/js/**/*.js" )
+        .pipe( babel() )
+        .pipe( gulp.dest( "assets/js" ) );
 } );
 // --- Watch tasks
 
