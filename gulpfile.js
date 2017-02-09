@@ -12,7 +12,8 @@
      image = require( "gulp-image" ),
      sass = require( "gulp-sass" ),
      autoprefixer = require( "gulp-autoprefixer" ),
-     csso = require( "gulp-csso" );
+     csso = require( "gulp-csso" )
+     pug = require( "gulp-pug" );
 
 // --- Task for images
 gulp.task( "images", function(){
@@ -29,7 +30,11 @@ gulp.task( "css", function(){
         .pipe( gulp.dest( "assets/css" ) );
 } );
 // --- Task for pug
-
+gulp.task( "html", function(){
+    gulp.src( "src/pug/**/*.pug" )
+        .pipe( pug() )
+        .pipe( gulp.dest( "." ) )
+} );
 // --- Task for js
 
 // --- Watch tasks
