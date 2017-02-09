@@ -36,7 +36,11 @@ gulp.task( "html", function(){
         .pipe( gulp.dest( "." ) )
 } );
 // --- Task for js
-
+gulp.task( "html", function(){
+    gulp.src( "src/pug/**/*.pug" )
+        .pipe( pug() )
+        .pipe( gulp.dest( "." ) )
+} );
 // --- Watch tasks
 
 // --- Aliases
