@@ -50,5 +50,5 @@ gulp.task( "watch", function(){
     gulp.watch( "src/js/**/*.js", [ "js" ] );
 });
 // --- Aliases
-gulp.task( "default", ["images", "html", "css", "js" ] );
-gulp.task( "work", ["default", "watch"] )
+gulp.task( "default", [ "images", "html", "css", "js" ] );
+gulp.task( "work", [ "default", "watch" ] );
